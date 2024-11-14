@@ -273,11 +273,11 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    0.0, 61.210549444444444
+                    0.0, 62.0
                 ]
             },
             "properties": {
-                "name": "VALDI",
+                "name": "IPTON",
                 "icao": "EFRO"
             }
         },

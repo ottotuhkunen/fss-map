@@ -5,13 +5,13 @@ import { otherControllerColors} from '../utils/utils';
 import swedenGeoJsonUrl from '../geofiles/sweden.geojson';
 import norwayGeoJsonUrl from '../geofiles/norway.geojson';
 
-const defaultColor = 'transparent'; // Default color
+const defaultColor = 'transparent';
 
 const ownersOnline = ['SK', 'SN', 'S3', 'S1', '1R', '5R', '6R', '18R', '24R', '26R', '17R'];
 
 const getOwnerColor = (owners) => {
   if (!Array.isArray(owners)) {
-    owners = [owners]; // Convert to array if it's a single string
+    owners = [owners];
   }
   for (const owner of owners) {
     if (ownersOnline.includes(owner)) {
@@ -24,7 +24,7 @@ const getOwnerColor = (owners) => {
 const getProcessedGeoJson = (geoJson) => {
   if (!geoJson || !geoJson.features || !Array.isArray(geoJson.features)) {
     console.error('Invalid GeoJSON data:', geoJson);
-    return geoJson; // Return invalid
+    return geoJson; 
   }
 
   return {
@@ -60,10 +60,10 @@ const fetchGeoJson = async (url) => {
 
 const useMapInstance = () => {
   const mapRef = useRef(null);
-  const { map } = useMap(); // Access the map instance
+  const { map } = useMap();
 
   useEffect(() => {
-    mapRef.current = map; // Set the map instance to ref
+    mapRef.current = map; 
   }, [map]);
 
   return mapRef;
@@ -76,7 +76,6 @@ const Sweden = () => {
 
   useEffect(() => {
     if (!hasLogged.current) {
-      console.log("Sweden component mounted");
       hasLogged.current = true;
     }
     const loadGeoJson = async () => {
@@ -85,75 +84,6 @@ const Sweden = () => {
     };
     loadGeoJson();
   }, []);
-
-  useEffect(() => {
-    const map = mapRef.current;
-    if (map) {
-      if (map.getLayer('airspace-fills-sweden')) {
-        console.log('Sweden layers already present.');
-        return; // Stop if layer already exists
-      }
-
-      // Add your layers here if they don't exist
-      map.addLayer({
-        id: 'airspace-fills-sweden',
-        type: 'fill',
-        source: 'sweden-source',
-        paint: {
-          'fill-color': [
-            'match',
-            ['get', 'group'],
-            'TWR', 'transparent',
-            'APP', 'transparent',
-            'ACC', ['coalesce', ['get', 'color'], defaultColor],
-            defaultColor
-          ],
-          'fill-opacity': 0.15,
-        },
-        filter: [
-          'all',
-          ['==', ['get', 'group'], 'ACC']
-        ]
-      });
-
-      map.addLayer({
-        id: 'airspace-borders-sweden',
-        type: 'line',
-        source: 'sweden-source',
-        paint: {
-          'line-color': [
-            'match',
-            ['get', 'group'],
-            'TWR', '#00cc99',
-            'APP', '#0099cc',
-            'ACC', '#666666',
-            defaultColor
-          ],
-          'line-width': 0.7,
-          'line-dasharray': [
-            'match',
-            ['get', 'group'],
-            'TWR', [2, 1],
-            'APP', [2, 1],
-            'ACC', [1],
-            [0]
-          ]
-        },
-        filter: [
-          'all',
-          [
-            'match',
-            ['get', 'group'],
-            'ACC', true,
-            false
-          ],
-          ['<', ['zoom'], 6.5]
-        ]
-      });
-
-      // Repeat for other layers...
-    }
-  }, [mapRef, geoJson]);
 
   if (!geoJson) return null;
 
@@ -177,6 +107,7 @@ const Sweden = () => {
           'all',
           ['==', ['get', 'group'], 'ACC']
         ]}
+        maxzoom={7}
       />
       <Layer
         id="airspace-borders-sweden"
@@ -240,6 +171,59 @@ const Sweden = () => {
           ['<', ['zoom'], 7.5]
         ]}
       />
+
+      <Layer
+        id="tma-labels-sweden"
+        type="symbol"
+        layout={{
+          'text-field': [
+            'case', 
+            ['==', ['get', 'group'], 'APP'], 
+            ['get', 'id'], 
+            ''
+          ],
+          'text-size': 10,
+          'text-font': ['Open Sans Regular', 'Arial Unicode MS Regular']
+        }}
+        paint={{
+          'text-color': '#ffffff',
+          'text-halo-color': '#000000',
+          'text-halo-width': 1
+        }}
+        filter={[
+          'all',
+          ['>=', ['zoom'], 6],
+          ['<', ['zoom'], 7.5] 
+        ]}
+      />
+
+      <Layer
+        id="sectors-labels-sweden"
+        type="symbol"
+        layout={{
+          'text-field': [
+            'case', 
+            ['==', ['get', 'group'], 'ACC'], 
+            ['get', 'id'], 
+            ''
+          ],
+          'text-size': 10,
+          'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
+          'text-anchor': 'center',
+        }}
+
+        paint={{
+          'text-color': 'lightgray',
+          'text-halo-color': '#000000',
+          'text-halo-width': 0.6
+        }}
+        filter={[
+          'all',
+          ['>=', ['zoom'], 5],
+          ['<', ['zoom'], 6.5] 
+        ]}
+      />
+
     </Source>
   );
 };
@@ -251,7 +235,7 @@ const Norway = () => {
 
   useEffect(() => {
     if (!hasLogged.current) {
-      console.log("Norway component mounted");
+      // console.log("Norway component mounted");
       hasLogged.current = true;
     }
     const loadGeoJson = async () => {
@@ -260,70 +244,6 @@ const Norway = () => {
     };
     loadGeoJson();
   }, []);
-
-  useEffect(() => {
-    const map = mapRef.current;
-    if (map) {
-      if (map.getLayer('airspace-fills-norway')) {
-        console.log('Norway layers already present.');
-        return; // Stop if layer already exists
-      }
-
-      // Add your layers here if they don't exist
-      map.addLayer({
-        id: 'airspace-fills-norway',
-        type: 'fill',
-        source: 'norway-source',
-        paint: {
-          'fill-color': [
-            'match',
-            ['get', 'group'],
-            'TWR', 'transparent',
-            'APP', 'transparent',
-            'ACC', ['coalesce', ['get', 'color'], defaultColor],
-            defaultColor
-          ],
-          'fill-opacity': 0.15,
-        },
-        filter: [
-          'all',
-          ['==', ['get', 'group'], 'ACC']
-        ],
-      });      
-
-      map.addLayer({
-        id: 'airspace-borders-norway-acc',
-        type: 'line',
-        source: 'norway-source',
-        paint: {
-          'line-color': [
-            'match',
-            ['get', 'group'],
-            'TWR', '#00cc99',
-            'APP', '#0099cc',
-            'ACC', '#666666',
-            defaultColor
-          ],
-          'line-width': 0.7,
-          'line-dasharray': [
-            'match',
-            ['get', 'group'],
-            'TWR', [2, 1],
-            'APP', [2, 1],
-            'ACC', [1],
-            [0]
-          ]
-        },
-        filter: [
-          'all',
-          ['==', ['get', 'group'], 'ACC'],
-          ['<', ['zoom'], 6.5]
-        ],
-      });
-
-      // Repeat for other layers...
-    }
-  }, [mapRef, geoJson]);
 
   if (!geoJson) return null;
 
@@ -347,6 +267,7 @@ const Norway = () => {
           'all',
           ['==', ['get', 'group'], 'ACC']
         ]}
+        maxzoom={7}
       />
       <Layer
         id="airspace-borders-norway-acc"
@@ -405,6 +326,59 @@ const Norway = () => {
           ['<', ['zoom'], 7.5]
         ]}
       />
+
+      <Layer
+        id="tma-labels-norway"
+        type="symbol"
+        layout={{
+          'text-field': [
+            'case', 
+            ['==', ['get', 'group'], 'APP'], 
+            ['get', 'id'], 
+            ''
+          ],
+          'text-size': 10,
+          'text-font': ['Open Sans Regular', 'Arial Unicode MS Regular']
+        }}
+        paint={{
+          'text-color': '#ffffff',
+          'text-halo-color': '#000000',
+          'text-halo-width': 1
+        }}
+        filter={[
+          'all',
+          ['>=', ['zoom'], 6],
+          ['<', ['zoom'], 7.5] 
+        ]}
+      />
+
+      <Layer
+        id="sectors-labels-norway"
+        type="symbol"
+        layout={{
+          'text-field': [
+            'case', 
+            ['==', ['get', 'group'], 'ACC'], 
+            ['get', 'id'], 
+            ''
+          ],
+          'text-size': 10,
+          'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
+          'text-anchor': 'center',
+        }}
+
+        paint={{
+          'text-color': 'lightgray',
+          'text-halo-color': '#000000',
+          'text-halo-width': 0.6
+        }}
+        filter={[
+          'all',
+          ['>=', ['zoom'], 5],
+          ['<', ['zoom'], 6.5] 
+        ]}
+      />
+
     </Source>
   );
 };

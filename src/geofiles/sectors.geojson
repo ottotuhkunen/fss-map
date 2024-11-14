@@ -33,7 +33,7 @@
         ]
       },
       "properties": {
-        "name": "SECT A",
+        "name": "EFIN A",
         "code": "sector1",
         "call": "Helsinki control",
         "rmk": "ABV FL 660 (G),\nBTN FL 660 – FL 95 (C),\nBLW FL 95 (G)",
@@ -58,7 +58,7 @@
         ]
       },
       "properties": {
-        "name": "SECT B",
+        "name": "EFIN B",
         "code": "sector2",
         "call": "Helsinki control",
         "rmk": "ABV FL 660 (G),\nBTN FL 660 – FL 95 (C),\nBLW FL 95 (G)",
@@ -83,7 +83,7 @@
         ]
       },
       "properties": {
-        "name": "SECT C",
+        "name": "EFIN C",
         "code": "sector3",
         "call": "Helsinki control",
         "rmk": "ABV FL 660 (G),\nBTN FL 660 – FL 95 (C),\nBLW FL 95 (G)",
@@ -112,7 +112,7 @@
         ]
       },
       "properties": {
-        "name": "SECT D",
+        "name": "EFIN D",
         "code": "sector4",
         "call": "Helsinki control",
         "rmk": "ABV FL 660 (G),\nBTN FL 660 – FL 95 (C),\nBLW FL 95 (G)",
@@ -148,7 +148,7 @@
         ]
       },
       "properties": {
-        "name": "SECT E",
+        "name": "EFIN E",
         "code": "sector5",
         "call": "Helsinki control",
         "rmk": "ABV FL 660 (G),\nBTN FL 660 – FL 95 (C),\nBLW FL 95 (G)",
@@ -189,7 +189,7 @@
         ]
       },
       "properties": {
-        "name": "SECT F",
+        "name": "EFIN F",
         "code": "sector6",
         "call": "Helsinki control",
         "rmk": "ABV FL 660 (G),\nBTN FL 660 – FL 95 (C),\nBLW FL 95 (G)",
@@ -234,7 +234,7 @@
         ]
       },
       "properties": {
-        "name": "SECT G",
+        "name": "EFIN G",
         "code": "sector7",
         "call": "Helsinki control",
         "rmk": "ABV FL 660 (G),\nBTN FL 660 – FL 95 (C),\nBLW FL 95 (G)",
@@ -298,7 +298,7 @@
         ]
       },
       "properties": {
-        "name": "SECT H",
+        "name": "EFIN H",
         "code": "sector8",
         "call": "Helsinki control",
         "rmk": "ABV FL 660 (G),\nBTN FL 660 – FL 95 (C),\nBLW FL 95 (G)",
@@ -458,7 +458,7 @@
         ]
       },
       "properties": {
-        "name": "SECT J",
+        "name": "EFIN J",
         "code": "sector9",
         "call": "Helsinki control",
         "rmk": "ABV FL 660 (G),\nBTN FL 660 – FL 95 (C),\nBLW FL 95 (G)",
@@ -486,7 +486,7 @@
         ]
       },
       "properties": {
-        "name": "SECT K",
+        "name": "EFIN K",
         "code": "sector10",
         "call": "Helsinki control",
         "rmk": "ABV FL 660 (G),\nBTN FL 660 – FL 95 (C),\nBLW FL 95 (G)",
@@ -529,7 +529,7 @@
         ]
       },
       "properties": {
-        "name": "SECT L",
+        "name": "EFIN L",
         "code": "sector11",
         "call": "Helsinki control",
         "rmk": "ABV FL 660 (G),\nBTN FL 660 – FL 95 (C),\nBLW FL 95 (G)",
@@ -565,7 +565,7 @@
         ]
       },
       "properties": {
-        "name": "SECT M",
+        "name": "EFIN M",
         "code": "sector12",
         "call": "Helsinki control",
         "rmk": "ABV FL 660 (G),\nBTN FL 660 – FL 95 (C),\nBLW FL 95 (G)",
@@ -621,7 +621,7 @@
         ]
       },
       "properties": {
-        "name": "SECT N",
+        "name": "EFIN N",
         "code": "sector13",
         "call": "Helsinki control",
         "rmk": "ABV FL 660 (G),\nBTN FL 660 – FL 95 (C),\nBLW FL 95 (G)",
@@ -682,7 +682,7 @@
         ]
       },
       "properties": {
-        "name": "SECT V",
+        "name": "EFIN V",
         "code": "sector14",
         "call": "Helsinki control",
         "rmk": "ABV FL 660 (G),\nBTN FL 660 – FL 95 (C),\nBLW FL 95 (G)",

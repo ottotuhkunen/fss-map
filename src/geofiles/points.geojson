@@ -10,11 +10,64 @@
                 ]
             },
             "properties": {
-                "name": "ROGED [H]",
+                "name": "ROGED",
                 "icao": "EFRO",
                 "type": "hold"
             }
         },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.697827777777778, 57.0
+                ]
+            },
+            "properties": {
+                "name": "DANKO",
+                "icao": "EFRO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.908308333333333, 58.08449722222222
+                ]
+            },
+            "properties": {
+                "name": "SVA",
+                "icao": "EFRO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.570288888888888, 59.18747222222222
+                ]
+            },
+            "properties": {
+                "name": "ULMUG",
+                "icao": "EFRO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.125, 59.67777777777778
+                ]
+            },
+            "properties": {
+                "name": "ELVOM",
+                "icao": "EFRO"
+            }
+        },
+
         {
             "type": "Feature",
             "geometry": {
@@ -38,7 +91,8 @@
             },
             "properties": {
                 "name": "SUN",
-                "icao": "EFRO"
+                "icao": "EFRO",
+                "type": "hold"
             }
         },
         {
@@ -50,7 +104,7 @@
                 ]
             },
             "properties": {
-                "name": "ELBOG [H]",
+                "name": "ELBOG",
                 "icao": "EFRO",
                 "type": "hold"
             }
@@ -64,7 +118,7 @@
                 ]
             },
             "properties": {
-                "name": "BESLA [H]",
+                "name": "BESLA",
                 "icao": "EFRO",
                 "type": "hold"
             }
@@ -113,12 +167,65 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
+                    9.383333333333333, 60.323611111111106
+                ]
+            },
+            "properties": {
+                "name": "ADOPI",
+                "icao": "EFRO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.7700000000000005, 57.0
+                ]
+            },
+            "properties": {
+                "name": "NOREM",
+                "icao": "EFRO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.844583333333333, 59.329805555555556
+                ]
+            },
+            "properties": {
+                "name": "ROPNO",
+                "icao": "EFRO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    3.608355555555556, 57.90753888888889
+                ]
+            },
+            "properties": {
+                "name": "ALOTI",
+                "icao": "EFRO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
                     15.183305555555556, 62.72636111111111
                 ]
             },
             "properties": {
                 "name": "OSLAV",
-                "icao": "EFRO"
+                "icao": "EFRO",
+                "type": "hold"
             }
         },
         {
@@ -130,7 +237,7 @@
                 ]
             },
             "properties": {
-                "name": "BEGDO [H]",
+                "name": "BEGDO",
                 "icao": "EFRO",
                 "type": "hold"
             }
@@ -153,12 +260,92 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
+                    7.589722222222222, 62.38111111111111
+                ]
+            },
+            "properties": {
+                "name": "EVLED",
+                "icao": "EFRO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    1.7394472222222223, 59.03527777777778   
+                ]
+            },
+            "properties": {
+                "name": "BEREP",
+                "icao": "EFRO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.8289166666666667, 58.39011111111111  
+                ]
+            },
+            "properties": {
+                "name": "KLONN",
+                "icao": "EFRO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.0, 61.210549444444444
+                ]
+            },
+            "properties": {
+                "name": "VALDI",
+                "icao": "EFRO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.5781694444444445, 61.65458888888889
+                ]
+            },
+            "properties": {
+                "name": "KEKOD",
+                "icao": "EFRO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    10.073027777777778, 62.840083333333336
+                ]
+            },
+            "properties": {
+                "name": "OSMUM",
+                "icao": "EFRO"
+            }
+        },
+
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
                     14.487555555555555, 63.19955555555556
                 ]
             },
             "properties": {
                 "name": "OSS",
-                "icao": "EFRO"
+                "icao": "EFRO",
+                "type": "hold"
             }
         },
         {
@@ -254,7 +441,7 @@
                 ]
             },
             "properties": {
-                "name": "DIVEG [H]",
+                "name": "DIVEG",
                 "icao": "EFRO",
                 "type": "hold"
             }
@@ -269,7 +456,7 @@
                 ]
             },
             "properties": {
-                "name": "GODOB [H]",
+                "name": "GODOB",
                 "icao": "EFRO",
                 "type": "hold"
             }
@@ -307,6 +494,46 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
+                    15.655, 54.916666666666664
+                ]
+            },
+            "properties": {
+                "name": "GORPI",
+                "icao": "EFRO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    16.602333333333334, 56.88361111111111
+                ]
+            },
+            "properties": {
+                "name": "LATVI",
+                "icao": "EFRO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    18.455, 59.56916666666666
+                ]
+            },
+            "properties": {
+                "name": "ELRID",
+                "icao": "EFRO"
+            }
+        },
+
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
                     20.6761111111111,
                     59.1827777777778
                 ]
@@ -321,12 +548,90 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
+                    17.16138888888889, 55.63861111111111
+                ]
+            },
+            "properties": {
+                "name": "PENOR",
+                "icao": "EFRO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
                     24.4525,
                     59.7994444444444
                 ]
             },
             "properties": {
                 "name": "DOBAN",
+                "icao": "EFRO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.863888888888889, 54.505833333333335
+                ]
+            },
+            "properties": {
+                "name": "EKERN",
+                "icao": "EFRO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.993333333333334, 54.905277777777776
+                ]
+            },
+            "properties": {
+                "name": "ALS",
+                "icao": "EFRO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.643888888888888, 57.13777777777778
+                ]
+            },
+            "properties": {
+                "name": "VADIN",
+                "icao": "EFRO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    13.294305555555556, 58.16938888888889
+                ]
+            },
+            "properties": {
+                "name": "LABAN",
+                "icao": "EFRO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    16.650333333333335, 59.58622222222222
+                ]
+            },
+            "properties": {
+                "name": "ARS",
                 "icao": "EFRO"
             }
         },
@@ -368,7 +673,7 @@
                 ]
             },
             "properties": {
-                "name": "TEVRU [H]",
+                "name": "TEVRU",
                 "icao": "EFRO",
                 "type": "hold"
             }
@@ -425,7 +730,7 @@
                 ]
             },
             "properties": {
-                "name": "OTLUD [H]",
+                "name": "OTLUD",
                 "icao": "EFRO",
                 "type": "hold"
             }
@@ -496,7 +801,7 @@
                 ]
             },
             "properties": {
-                "name": "SUVIB [H]",
+                "name": "SUVIB",
                 "icao": "EFRO",
                 "type": "hold"
             }
@@ -710,7 +1015,7 @@
                 ]
             },
             "properties": {
-                "name": "OTVEG [H]",
+                "name": "OTVEG",
                 "icao": "EFRO",
                 "type": "hold"
             }
@@ -856,6 +1161,20 @@
             "properties": {
                 "name": "TERPA",
                 "icao": "ESNQ"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    21.7961111111111,
+                    69.1725
+                ]
+            },
+            "properties": {
+                "name": "GAPRO",
+                "icao": "ENTC"
             }
         }
     ]

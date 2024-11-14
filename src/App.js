@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Map, { Source, Layer } from 'react-map-gl';
+import Map, { Source, Layer, NavigationControl } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import Toggle from './components/Toggle';
 import sectorsGeoJson from './geofiles/sectors.geojson';
 import tmaFSSGeoJson from './geofiles/tmaFSS.geojson';
 import tmaGeoJson from './geofiles/finland.geojson';
@@ -8,6 +9,7 @@ import routesGeoJson from './geofiles/routes.geojson';
 import firsJson from './firs.json';
 import pointsGeoJson from './geofiles/points.geojson';
 import aerodromesGeoJson from './geofiles/aerodromes.geojson';
+import holdsGeoJson from './geofiles/holds.geojson';
 import { Sweden, Norway } from './components/OtherAirspaces';
 import Legend from './components/Legend';
 import Traffic from './components/Traffic';
@@ -29,8 +31,9 @@ const getSectorOwner = (sectorCode, onlineControllers) => {
 };
 
 const App = () => {
-  const [onlineControllers, setOnlineControllers] = useState(['EFIN_D_CTR',"EFIN_H_CTR","EFIN_M_CTR", "EFIN_G_CTR"]);
+  const [onlineControllers, setOnlineControllers] = useState(['EFIN_D_CTR',"EFIN_G_CTR","EFIN_M_CTR", "EFIN_H_CTR"]);
   const [activePreset, setActivePreset] = useState(null);
+  let mapRef = useRef(null);
 
   const toggleController = (callsign) => {
     setOnlineControllers(prev =>
@@ -52,11 +55,14 @@ const App = () => {
   };
 
   const handleMapLoad = (map) => {
+    mapRef = map;
     if (map.getLayer('airspace-fills-norway')) {
       map.moveLayer('airspace-fills-norway', 'sectors-fill');
       map.moveLayer('airspace-fills-sweden', 'sectors-fill');
       map.moveLayer('airspace-borders-sweden', 'sectors-fill');
       map.moveLayer('airspace-borders-norway-acc', 'sectors-fill');
+      map.moveLayer('airspace-borders-app-sweden', 'sectors-fill');
+      map.moveLayer('airspace-borders-norway-app', 'sectors-fill');
     }
   };
   
@@ -71,10 +77,12 @@ const App = () => {
           zoom: 3.8
         }}
         style={{ width: '100%', height: '100%' }}
-        mapStyle="mapbox://styles/ottotuhkunen/cm16espeq020301qu8sxogcp8"
+        mapStyle="mapbox://styles/ottotuhkunen/cm19k9u0302b301pbcusdhm1a"
         mapboxAccessToken={mapboxToken}
         onLoad={(event) => handleMapLoad(event.target)}
       >
+
+        <NavigationControl position="top-right" />
 
         <Source type="geojson" data={sectorsGeoJson}>
           <Layer
@@ -102,6 +110,7 @@ const App = () => {
               ],
               'fill-opacity': 0.15
             }}
+            maxzoom={7}
           />
 
           <Layer
@@ -131,7 +140,11 @@ const App = () => {
               'text-halo-color': '#000000',
               'text-halo-width': 0.6
             }}
-            minzoom={6}
+            filter={[
+              'all',
+              ['>=', ['zoom'], 5],
+              ['<', ['zoom'], 6.5] 
+            ]}
           />
 
         </Source>
@@ -198,11 +211,6 @@ const App = () => {
           <Layer
             id="tma-labels"
             type="symbol"
-            layout={{
-              'text-field': ['concat', ['get', 'longcode']],
-              'text-size': 10,
-              'text-font': ['Open Sans Regular', 'Arial Unicode MS Regular']
-            }}
             paint={{
               'text-color': '#ffffff',
               'text-halo-color': '#000000',
@@ -223,6 +231,46 @@ const App = () => {
           />
         </Source>
 
+        <Source id="aerodromes" type="geojson" data={aerodromesGeoJson}>
+          <Layer
+            id="aerodromes-symbol"
+            type="symbol"
+            layout={{
+              'text-field': '+',
+              'text-font': ['Open Sans Regular', 'Arial Unicode MS Regular'],
+              'text-size': 13,
+              'text-offset': [0, 0],
+              'text-anchor': 'center',
+              'text-allow-overlap': true,
+            }}
+            paint={{
+              'text-color': '#8c8c8c',
+              'text-halo-color': 'black',
+              'text-halo-width': 0.9,
+            }}
+            minzoom={5}
+          />
+          
+          <Layer
+            id="aerodromes-label"
+            type="symbol"
+            layout={{
+              'text-field': ['get', 'icao'],
+              'text-font': ['Open Sans Regular', 'Arial Unicode MS Regular'],
+              'text-size': 10,
+              'text-offset': [0.8, 0],
+              'text-anchor': 'left',
+              'text-allow-overlap': true,
+            }}
+            paint={{
+              'text-color': 'lightgray',
+              'text-halo-color': '#000000',
+              'text-halo-width': 1
+            }}
+            minzoom={6}
+          />
+        </Source>
+
         {/* Airways (routes) */}
         <Source type="geojson" data={routesGeoJson}>
           <Layer
@@ -240,46 +288,35 @@ const App = () => {
           />
         </Source>
 
-        <Source id="aerodromes" type="geojson" data={aerodromesGeoJson}>
+        {/* Holds */}
+        <Source type="geojson" data={holdsGeoJson}>
           <Layer
-            id="aerodromes-symbol"
-            type="symbol"
-            layout={{
-              'text-field': '+',
-              'text-font': ['Open Sans Regular', 'Arial Unicode MS Regular'],
-              'text-size': 14,
-              'text-offset': [0, 0],
-              'text-anchor': 'center',
-              'text-allow-overlap': true,
-            }}
+            id="efro-holds-lines"
+            type="line"
             paint={{
-              'text-color': '#8c8c8c',
-              'text-halo-color': '#000000',
-              'text-halo-width': 1,
+              'line-color': '#ff4000',
+              'line-width': 0.7
             }}
             minzoom={4}
           />
-          
           <Layer
-            id="aerodromes-label"
+            id="efro-holds-text"
             type="symbol"
             layout={{
-              'text-field': ['get', 'icao'],
-              'text-font': ['Open Sans Regular', 'Arial Unicode MS Regular'],
+              'text-field': ['concat', ['get', 'info']],
               'text-size': 10,
-              'text-offset': [1, 0],
-              'text-anchor': 'left',
+              'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
+              'icon-allow-overlap': true,
               'text-allow-overlap': true,
             }}
             paint={{
-              'text-color': 'lightgray',
-              'text-halo-color': '#000000',
-              'text-halo-width': 1
+              'text-color': '#ff4000',
+              'text-halo-color': 'black',
+              'text-halo-width': 0.6
             }}
-            minzoom={5.5}
+            minzoom={6}
           />
         </Source>
-
 
         <Source id="points" type="geojson" data={pointsGeoJson}>
           <Layer
@@ -316,10 +353,12 @@ const App = () => {
           />
         </Source>
 
-
         <Traffic />
-
         <Legend />
+
+        <a className='logo' href='https://vatsim-scandinavia.org/' target="_blank">
+          <img src='/img/logo.svg'></img>
+        </a>
 
       </Map>
     </div>

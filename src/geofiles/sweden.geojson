@@ -5246,7 +5246,7 @@
       },
       "properties": {
         "id": "ESNK TIA",
-        "group": "TIA",
+        "group": "APP",
         "owner": [
           "NK",
           "RTC",
@@ -9519,7 +9519,7 @@
       },
       "properties": {
         "id": "ESSU TIA",
-        "group": "TIA",
+        "group": "APP",
         "owner": [
           "SU"
         ],
@@ -10215,7 +10215,7 @@
       },
       "properties": {
         "id": "ESUP TIA",
-        "group": "TIA",
+        "group": "APP",
         "owner": [
           "UP",
           "RTC",

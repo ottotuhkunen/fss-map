@@ -4,6 +4,7 @@ import '../App.css';
 const Legend = () => {
   // State to control legend visibility
   const [isVisible, setIsVisible] = useState(false);
+  const check = true;
 
   // Toggle visibility
   const toggleLegend = () => {
@@ -18,8 +19,8 @@ const Legend = () => {
       </button>
 
       {/* Conditionally render the legend */}
-      {isVisible && (
-        <div id="map-legend" className="legend">
+      {check && (
+      <div id="map-legend" className={`map-legend ${isVisible ? 'legend-visible' : ''}`}>
           {/* Close Button */}
           <button className="legend-close-btn" onClick={toggleLegend}>x</button>
           
@@ -40,7 +41,7 @@ const Legend = () => {
             <div className="legend-icon-airspace" style={{ backgroundColor: '#00cc99' }}></div>
             <div className="legend-description">Lower (CTR/FIZ)</div>
           </div>
-          <h4>Routes (clickable)</h4>
+          <h4>Route Colors</h4>
           <div className="legend-item">
             <div className="legend-icon" style={{ color: '#ff4000' }}>---</div>
             <div className="legend-description">EFRO Mandatory Routes</div>
@@ -58,8 +59,8 @@ const Legend = () => {
             <div className="legend-description">EFRO DEP towards Sweden</div>
           </div>
           <div className="legend-item">
-            <div className="legend-icon" style={{ color: 'yellow' }}>[H]</div>
-            <div className="legend-description">Reserved En-route hold<br />Click for hold instructions</div>
+            <div className="legend-icon" style={{ color: 'yellow', fontSize: '9pt' }}>SUN</div>
+            <div className="legend-description">Reserved En-route hold<br />Zoom in for hold instructions</div>
           </div>
           <div className="legend-item">
             <div className="legend-icon" style={{ color: 'white' }}>arc</div>

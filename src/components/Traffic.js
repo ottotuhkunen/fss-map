@@ -2,24 +2,41 @@ import React, { useEffect, useState } from 'react';
 import { Source, Layer, Popup, useMap } from 'react-map-gl';
 import * as turf from '@turf/turf';
 import { VALID_ROUTES } from '../utils/utils';
+import styled, { keyframes, useTheme } from 'styled-components';
 
 const TRAFFIC_URL = 'https://data.vatsim.net/v3/vatsim-data.json';
 const REFRESH_INTERVAL = 10000;
 
 const airports = [
-  { code: 'EFHK', icon: '/img/tfc-efro.png', name: 'EFRO', coords: [24.9634, 60.3172] },
-  { code: 'ESSA', icon: '/img/tfc-esnq.png', name: 'ESNQ', coords: [17.923, 59.6519] },
-  { code: 'ENGM', icon: '/img/tfc-entc.png', name: 'ENTC', coords: [11.099, 60.2028] },
+  { code: 'EFRO', icon: '/img/tfc-efro.png', name: 'EFRO', coords: [25.8476, 66.5608] },
+  { code: 'ESNQ', icon: '/img/tfc-esnq.png', name: 'ESNQ', coords: [20.3718, 67.8550] },
+  { code: 'ENTC', icon: '/img/tfc-entc.png', name: 'ENTC', coords: [18.9113, 69.6820] } 
 ];
+
+const wobble = keyframes`
+  0% { transform: rotate(0deg); }
+  15% { transform: rotate(15deg); }
+  30% { transform: rotate(-10deg); }
+  45% { transform: rotate(5deg); }
+  60% { transform: rotate(-5deg); }
+  75% { transform: rotate(2deg); }
+  100% { transform: rotate(0deg); }
+`;
+
+const ImageWrapper = styled.img`
+  h2:hover & {
+    animation: ${wobble} 1s ease-in-out;
+  }
+`;
 
 const Traffic = () => {
   const [trafficData, setTrafficData] = useState([]);
   const [popupInfo, setPopupInfo] = useState(null);
   const [airportToggles, setAirportToggles] = useState({
-    EFHK: true, ESSA: true, ENGM: true
+    EFRO: true, ESNQ: true, ENTC: true
   });
-  const [trafficCount, setTrafficCount] = useState({ EFHK: 0, ESSA: 0, ENGM: 0 });
-  const [nextHourTraffic, setNextHourTraffic] = useState({ EFHK: 0, ESSA: 0, ENGM: 0 });
+  const [trafficCount, setTrafficCount] = useState({ EFRO: 0, ESNQ: 0, ENTC: 0 });
+  const [nextHourTraffic, setNextHourTraffic] = useState({ EFRO: 0, ESNQ: 0, ENTC: 0 });
 
   const { current: map } = useMap();
 
@@ -51,18 +68,18 @@ const Traffic = () => {
 
 
   
-        // Coordinates for EFHK, ESSA, ENGM
+        // Coordinates for EFRO, ENSQ, ENTC
         const nextHourStats = {
-          EFHK: calculateNextHourTraffic('EFHK', airports.find(a => a.code === 'EFHK').coords),
-          ESSA: calculateNextHourTraffic('ESSA', airports.find(a => a.code === 'ESSA').coords),
-          ENGM: calculateNextHourTraffic('ENGM', airports.find(a => a.code === 'ENGM').coords)
+          EFRO: calculateNextHourTraffic('EFRO', airports.find(a => a.code === 'EFRO').coords),
+          ESNQ: calculateNextHourTraffic('ESNQ', airports.find(a => a.code === 'ESNQ').coords),
+          ENTC: calculateNextHourTraffic('ENTC', airports.find(a => a.code === 'ENTC').coords)
         };
   
         // Set traffic counts for each airport
         setTrafficCount({
-          EFHK: filteredData.filter(pilot => pilot.flight_plan.arrival === 'EFHK').length,
-          ESSA: filteredData.filter(pilot => pilot.flight_plan.arrival === 'ESSA').length,
-          ENGM: filteredData.filter(pilot => pilot.flight_plan.arrival === 'ENGM').length
+          EFRO: filteredData.filter(pilot => pilot.flight_plan.arrival === 'EFRO').length,
+          ESNQ: filteredData.filter(pilot => pilot.flight_plan.arrival === 'ESNQ').length,
+          ENTC: filteredData.filter(pilot => pilot.flight_plan.arrival === 'ENTC').length
         });
   
         // Set traffic expected in the next hour for each airport
@@ -92,7 +109,7 @@ const Traffic = () => {
     features: trafficData
       .filter(pilot => airportToggles[pilot.flight_plan.arrival])
       .map(pilot => {
-        const isInvalidRoute = pilot.flight_plan.arrival === 'EFHK' && !VALID_ROUTES.some(route => pilot.flight_plan.route.includes(route));
+        const isInvalidRoute = pilot.flight_plan.arrival === 'EFRO' && !VALID_ROUTES.some(route => pilot.flight_plan.route.includes(route));
         return {
           type: 'Feature',
           geometry: {
@@ -123,14 +140,14 @@ const Traffic = () => {
 
       const feature = features[0];
       const coordinates = feature.geometry.coordinates.slice();
-      const { callsign, altitude, groundspeed, departure, arrival, route } = feature.properties;
+      const { routeStatus, altitude, groundspeed, departure, arrival, route } = feature.properties;
 
       const flightLevel = altitude >= 5000 ? 'FL' + Math.round(altitude / 100) : altitude + ' FT';
       const skyvectorLink = `https://skyvector.com/?fpl=${departure}%20${route.split(' ').join('%20')}%20${arrival}`;
 
       setPopupInfo({
         coordinates,
-        callsign,
+        routeStatus,
         flightLevel,
         groundspeed,
         skyvectorLink,
@@ -170,14 +187,18 @@ const Traffic = () => {
             onClick={() => toggleAirportTraffic(airport.code)}
           >
             <img src={airport.icon} style={{ maxWidth: '24px' }} alt={`${airport.name} Arrivals`} />
-            <span><b>{trafficCount[airport.code]}</b></span> &emsp;
-            <span>next hour: {nextHourTraffic[airport.code]}</span>
+            <span className='traffic-count'>{trafficCount[airport.code]}</span> &emsp;
+            <span>({nextHourTraffic[airport.code]} ops/h)</span>
           </div>
         ))}
         <p className='hide-label'>
           Click to hide traffic &ensp;
           <img src={'/img/arrow-up.png'} style={{ maxWidth: '11px' }} alt={`↑`} />
         </p>
+        <h2 className="fss-title" onClick={() => window.open('https://fss.vatsim-scandinavia.org/', '_blank')} >
+          Fly and See Santa 2024
+          <ImageWrapper src="/img/fss-hat.png"></ImageWrapper>
+        </h2>
       </div>
 
       <Source id="traffic" type="geojson" data={trafficGeoJson}>
@@ -187,9 +208,9 @@ const Traffic = () => {
           layout={{
             'icon-image': [
               'case',
-              ['==', ['get', 'arrival'], 'EFHK'], 'tfc-efro',
-              ['==', ['get', 'arrival'], 'ESSA'], 'tfc-esnq',
-              ['==', ['get', 'arrival'], 'ENGM'], 'tfc-entc',
+              ['==', ['get', 'arrival'], 'EFRO'], 'tfc-efro',
+              ['==', ['get', 'arrival'], 'ESNQ'], 'tfc-esnq',
+              ['==', ['get', 'arrival'], 'ENTC'], 'tfc-entc',
               'default-icon'
             ],
             'icon-rotation-alignment': 'map',
@@ -209,9 +230,17 @@ const Traffic = () => {
             'text-color': 'white',
             'text-halo-color': '#000000',
             'text-halo-width': 0.6,
+            'text-opacity': [
+              'interpolate',
+              ['linear'],
+              ['zoom'],
+              4.99, 0,
+              5, 1
+            ],
           }}
         />
       </Source>
+
 
       {popupInfo && (
         <Popup
@@ -222,7 +251,7 @@ const Traffic = () => {
           anchor="top"
         >
           <div>
-            <strong>{popupInfo.callsign}</strong><br />
+            <strong>{popupInfo.routeStatus}</strong><br />
             <span>{popupInfo.flightLevel} {popupInfo.groundspeed} kt</span><br />
             <span>
               <a href={popupInfo.skyvectorLink} target="_blank" rel="noopener noreferrer">Open in SkyVector</a>

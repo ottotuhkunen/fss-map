@@ -234,6 +234,19 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
+                    20.152083333333332, 67.34172222222223
+                ]
+            },
+            "properties": {
+                "name": "VAGAS",
+                "icao": "EFRO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
                     12.0525, 63.33083333333334
                 ]
             },
@@ -962,6 +975,45 @@
             },
             "properties": {
                 "name": "AGWIM",
+                "icao": "EFRO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.291111111111111, 57.660000000000004
+                ]
+            },
+            "properties": {
+                "name": "ESGG",
+                "icao": "EFRO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.625333333333334, 58.25177777777778
+                ]
+            },
+            "properties": {
+                "name": "NEGIL",
+                "icao": "EFRO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    13.127777777777778, 58.76944444444444
+                ]
+            },
+            "properties": {
+                "name": "ORIGO",
                 "icao": "EFRO"
             }
         },

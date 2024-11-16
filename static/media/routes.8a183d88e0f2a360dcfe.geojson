@@ -152,6 +152,22 @@
       "properties": {
         "icao": "efro",
         "color": "#ff4000",
+        "type": "ad_connect"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [20.335555555555556, 67.82138888888889],
+          [20.152083333333332, 67.34172222222223],
+          [20.71472222222222, 65.90388888888889]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "icao": "efro",
+        "color": "#ff4000",
         "type": "arr_connect"
       },
       "geometry": {
@@ -344,6 +360,24 @@
           [12.534722222222223, 60.17777777777778],
           [14.833333333333334, 60.28333333333333],
           [19.8241666666667, 62.415]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "icao": "efro",
+        "color": "#ff4000",
+        "type": "ad_connect",
+        "info": "Traffic from ENGM to EFRO shall be routed MASEV DCT AGWIM DCT BODRI DCT DIVEG DCT GODOB DCT NEPIX."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [12.291111111111111, 57.660000000000004],
+          [12.625333333333334, 58.25177777777778],
+          [13.127777777777778, 58.76944444444444],
+          [14.833333333333334, 60.28333333333333]
         ]
       }
     },

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.1b4239bf.css",
-    "main.js": "/static/js/main.4b577c86.js",
+    "main.css": "/static/css/main.20532dfd.css",
+    "main.js": "/static/js/main.903d77fb.js",
     "static/js/879.19d0a3ef.chunk.js": "/static/js/879.19d0a3ef.chunk.js",
     "static/js/453.e68c3e44.chunk.js": "/static/js/453.e68c3e44.chunk.js",
     "static/media/norway.geojson": "/static/media/norway.83f3c26d6cb2b7861fbd.geojson",
@@ -14,13 +14,13 @@
     "static/media/routes.geojson": "/static/media/routes.500f99cb29d5e87a8c00.geojson",
     "static/media/tmaFSS.geojson": "/static/media/tmaFSS.1f13424b6471954b9016.geojson",
     "index.html": "/index.html",
-    "main.1b4239bf.css.map": "/static/css/main.1b4239bf.css.map",
-    "main.4b577c86.js.map": "/static/js/main.4b577c86.js.map",
+    "main.20532dfd.css.map": "/static/css/main.20532dfd.css.map",
+    "main.903d77fb.js.map": "/static/js/main.903d77fb.js.map",
     "879.19d0a3ef.chunk.js.map": "/static/js/879.19d0a3ef.chunk.js.map",
     "453.e68c3e44.chunk.js.map": "/static/js/453.e68c3e44.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1b4239bf.css",
-    "static/js/main.4b577c86.js"
+    "static/css/main.20532dfd.css",
+    "static/js/main.903d77fb.js"
   ]
 }

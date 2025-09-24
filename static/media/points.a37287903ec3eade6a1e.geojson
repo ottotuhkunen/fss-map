@@ -146,7 +146,8 @@
             },
             "properties": {
                 "name": "NEMGU",
-                "icao": "EFRO"
+                "icao": "EFRO",
+                "type": "hold"
             }
         },
         {
@@ -159,7 +160,8 @@
             },
             "properties": {
                 "name": "EGAGO",
-                "icao": "EFRO"
+                "icao": "EFRO",
+                "type": "hold"
             }
         },
         {
@@ -317,7 +319,8 @@
             },
             "properties": {
                 "name": "OSMUM",
-                "icao": "EFRO"
+                "icao": "EFRO",
+                "type": "hold"
             }
         },
 
@@ -401,7 +404,8 @@
             },
             "properties": {
                 "name": "OSLIT",
-                "icao": "EFRO"
+                "icao": "EFRO",
+                "type": "hold"
             }
         },
         {
@@ -884,7 +888,8 @@
             },
             "properties": {
                 "name": "NEPIX",
-                "icao": "EFRO"
+                "icao": "EFRO",
+                "type": "hold"
             }
         },
         {
@@ -1147,7 +1152,8 @@
             },
             "properties": {
                 "name": "BDO",
-                "icao": "ENTC"
+                "icao": "ENTC",
+                "type": "hold"
             }
         },
         {
@@ -1160,7 +1166,8 @@
             },
             "properties": {
                 "name": "BNN",
-                "icao": "ENTC"
+                "icao": "ENTC",
+                "type": "hold"
             }
         },
         {
@@ -1186,7 +1193,8 @@
             },
             "properties": {
                 "name": "IBVIS",
-                "icao": "ENTC"
+                "icao": "ENTC",
+                "type": "hold"
             }
         },
         {
@@ -1199,7 +1207,8 @@
             },
             "properties": {
                 "name": "SKG",
-                "icao": "ENTC"
+                "icao": "ENTC",
+                "type": "hold"
             }
         },
         {
@@ -1225,7 +1234,8 @@
             },
             "properties": {
                 "name": "BARVI",
-                "icao": "ENTC"
+                "icao": "ENTC",
+                "type": "hold"
             }
         },
         {

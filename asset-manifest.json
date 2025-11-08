@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/static/css/main.1e841d25.css",
-    "main.js": "/static/js/main.406baba6.js",
+    "main.js": "/static/js/main.7ad0afaa.js",
     "static/js/879.19d0a3ef.chunk.js": "/static/js/879.19d0a3ef.chunk.js",
     "static/js/453.e68c3e44.chunk.js": "/static/js/453.e68c3e44.chunk.js",
     "static/media/norway.geojson": "/static/media/norway.1f57d28edbea761231f5.geojson",
     "static/media/sweden.geojson": "/static/media/sweden.cb5a851dfec6cb12c198.geojson",
     "static/media/holds.geojson": "/static/media/holds.c8cec564edc777e363d7.geojson",
     "static/media/aerodromes.geojson": "/static/media/aerodromes.b60c3af96eec8fc344c9.geojson",
-    "static/media/points.geojson": "/static/media/points.a37287903ec3eade6a1e.geojson",
+    "static/media/points.geojson": "/static/media/points.fd3916e4e3b26c70afcc.geojson",
     "static/media/sectors.geojson": "/static/media/sectors.d647bcc4a033704285bb.geojson",
-    "static/media/routes.geojson": "/static/media/routes.500f99cb29d5e87a8c00.geojson",
+    "static/media/routes.geojson": "/static/media/routes.27bcff004df0ddbfe610.geojson",
     "static/media/tmaFSS.geojson": "/static/media/tmaFSS.1f13424b6471954b9016.geojson",
     "index.html": "/index.html",
     "main.1e841d25.css.map": "/static/css/main.1e841d25.css.map",
-    "main.406baba6.js.map": "/static/js/main.406baba6.js.map",
+    "main.7ad0afaa.js.map": "/static/js/main.7ad0afaa.js.map",
     "879.19d0a3ef.chunk.js.map": "/static/js/879.19d0a3ef.chunk.js.map",
     "453.e68c3e44.chunk.js.map": "/static/js/453.e68c3e44.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1e841d25.css",
-    "static/js/main.406baba6.js"
+    "static/js/main.7ad0afaa.js"
   ]
 }

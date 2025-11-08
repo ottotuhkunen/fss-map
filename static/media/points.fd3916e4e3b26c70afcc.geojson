@@ -617,12 +617,10 @@
             "type": "Feature",
             "geometry": {
                 "type": "Point",
-                "coordinates": [
-                    9.863888888888889, 54.505833333333335
-                ]
+                "coordinates": [9.6663889, 54.5255556]
             },
             "properties": {
-                "name": "EKERN",
+                "name": "PIZID",
                 "icao": "EFRO"
             }
         },
@@ -630,12 +628,10 @@
             "type": "Feature",
             "geometry": {
                 "type": "Point",
-                "coordinates": [
-                    9.993333333333334, 54.905277777777776
-                ]
+                "coordinates": [9.7505556, 54.8244445]
             },
             "properties": {
-                "name": "ALS",
+                "name": "AMRAK",
                 "icao": "EFRO"
             }
         },

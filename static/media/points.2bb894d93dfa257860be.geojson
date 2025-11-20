@@ -1173,6 +1173,32 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
+                    5.858888888888889, 55.0
+                ]
+            },
+            "properties": {
+                "name": "GREFI",
+                "icao": "EFRO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.0, 55.606944444444444
+                ]
+            },
+            "properties": {
+                "name": "INBOB",
+                "icao": "EFRO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
                     23.7169444444444, 67.0347222222222
                 ]
             },

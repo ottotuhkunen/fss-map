@@ -33,19 +33,6 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    7.908308333333333, 58.08449722222222
-                ]
-            },
-            "properties": {
-                "name": "SVA",
-                "icao": "EFRO"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     9.570288888888888, 59.18747222222222
                 ]
             },
@@ -54,20 +41,6 @@
                 "icao": "EFRO"
             }
         },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    11.125, 59.67777777777778
-                ]
-            },
-            "properties": {
-                "name": "ELVOM",
-                "icao": "EFRO"
-            }
-        },
-
         {
             "type": "Feature",
             "geometry": {
@@ -169,37 +142,24 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    9.383333333333333, 60.323611111111106
-                ]
-            },
-            "properties": {
-                "name": "ADOPI",
-                "icao": "EFRO"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    6.844583333333333, 59.329805555555556
-                ]
-            },
-            "properties": {
-                "name": "ROPNO",
-                "icao": "EFRO"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     3.608355555555556, 57.90753888888889
                 ]
             },
             "properties": {
                 "name": "ALOTI",
+                "icao": "EFRO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.295894444444444, 59.91115555555556
+                ]
+            },
+            "properties": {
+                "name": "TIBNO",
                 "icao": "EFRO"
             }
         },
@@ -1171,19 +1131,6 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    14.533504444444445, 67.60678888888889
-                ]
-            },
-            "properties": {
-                "name": "ARDUX",
-                "icao": "ENTC"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
                     14.68670138888889, 67.9175125
                 ]
             },
@@ -1205,19 +1152,6 @@
                 "name": "SKG",
                 "icao": "ENTC",
                 "type": "hold"
-            }
-        },
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    16.078783333333333, 68.80323555555556
-                ]
-            },
-            "properties": {
-                "name": "ATKID",
-                "icao": "ENTC"
             }
         },
         {

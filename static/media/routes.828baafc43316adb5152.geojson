@@ -91,7 +91,6 @@
         "coordinates": [
           [9.6663889, 54.5255556],
           [9.7505556, 54.8244445],
-
           [11.643888888888888, 57.13777777777778],
           [13.294305555555556, 58.16938888888889],
           [16.650333333333335, 59.58622222222222],
@@ -218,15 +217,13 @@
         "icao": "efro",
         "color": "#ff4000",
         "type": "arr_connect",
-        "info": "Routing for traffic from Sweden FIR to EFRO\n\nTraffic shall be cleared to FL210 by ESOS before transfer to EFIN\n\nTransfer shall happen at least 35 NM before MISMO\n\nESOS will apply minimum 20 NM spacing to traffic before MISMO unless otherwise coordinated with EFIN."
+        "info": "FROM DANKO"
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
           [6.697827777777778, 57.0],
-          [7.908308333333333, 58.08449722222222],
           [9.570288888888888, 59.18747222222222],
-          [11.125, 59.67777777777778],
           [12.606666666666667, 60.51277777777778],
           [14.329722222222221, 60.74277777777778],
           [17.448722222222224, 62.52844444444444],
@@ -246,30 +243,15 @@
       },
       "geometry": {
         "type": "LineString",
+        "info": "ALOTI TIBNO EGAGO",
+
         "coordinates": [
-          [6.844583333333333, 59.329805555555556],
-          [9.383333333333333, 60.323611111111106],
+          [3.608355555555556, 57.90753888888889],
+          [8.295894444444444, 59.91115555555556],
           [12.216666666666667, 61.67583333333334],
           [15.183305555555556, 62.72636111111111],
           [20.71472222222222, 65.90388888888889],
           [22.31025, 65.85752777777778]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "icao": "efro",
-        "color": "#ff4000",
-        "type": "arr_connect",
-        "info": "Routing for traffic from Sweden FIR to EFRO\n\nTraffic shall be cleared to FL210 by ESOS before transfer to EFIN\n\nTransfer shall happen at least 35 NM before MISMO\n\nESOS will apply minimum 20 NM spacing to traffic before MISMO unless otherwise coordinated with EFIN."
-      },
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [3.608355555555556, 57.90753888888889],
-          [6.844583333333333, 59.329805555555556],
-          [9.383333333333333, 60.323611111111106]
         ]
       }
     },
@@ -457,17 +439,17 @@
         "icao": "entc",
         "color": "#00ff40",
         "type": "arr_connect",
-        "info": "Mandatory route for arrivals from Norway FIR.\n\n[BDO Z200 BARVI]\n\nNo mandatory route from ESAA FIR."
+        "info": "BNN BDO IBVIS SKG BARVI"
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
           [12.214341666666667, 65.45705277777778],
           [14.364855555555556, 67.26669166666666],
-          [14.533504444444445, 67.60678888888889],
+
           [14.68670138888889, 67.9175125],
           [15.0349375, 68.57381888888889],
-          [16.078783333333333, 68.80323555555556],
+
           [17.103483333333333, 69.01848055555556]
         ]
       }

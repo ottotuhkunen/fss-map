@@ -1199,6 +1199,58 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
+                    25.1647222222222, 68.8027777777778
+                ]
+            },
+            "properties": {
+                "name": "UVMOK",
+                "icao": "EFRO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    22.5192222222222, 70.0589999999999
+                ]
+            },
+            "properties": {
+                "name": "EKTOX",
+                "icao": "EFRO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    21.9241111111111, 70.0171111111111
+                ]
+            },
+            "properties": {
+                "name": "UDSAM",
+                "icao": "EFRO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    20.6269444444444, 69.9918888888889
+                ]
+            },
+            "properties": {
+                "name": "DIBDI",
+                "icao": "EFRO"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
                     23.7169444444444, 67.0347222222222
                 ]
             },

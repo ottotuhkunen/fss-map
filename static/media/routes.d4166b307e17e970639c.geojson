@@ -420,6 +420,24 @@
       "type": "Feature",
       "properties": {
         "icao": "entc",
+        "color": "#00ff40",
+        "type": "ad_connect",
+        "info": "Traffic from Finland to ENTC via/east of point UVMOK"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [25.1647222222222, 68.8027777777778],
+          [22.5192222222222, 70.0589999999999],
+          [21.9241111111111, 70.0171111111111],
+          [20.6269444444444, 69.9918888888889]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "icao": "entc",
         "color": "lightgray",
         "type": "dep_connect",
         "info": "Departures from EFRO filed west of this route shall be routed via (OLNOP) DCT XONTU DCT KETEL.\n\nEFRO departues filed via MISMO shall be rerouted!\n\nDepartures from EFRO shall be cleared by EFIN to FL300 or requested flight level if lower."

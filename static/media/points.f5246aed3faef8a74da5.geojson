@@ -1212,11 +1212,11 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    22.5192222222222, 70.0589999999999
+                    22.55361111, 69.85722222
                 ]
             },
             "properties": {
-                "name": "EKTOX",
+                "name": "PEPEX",
                 "icao": "EFRO"
             }
         },
@@ -1225,11 +1225,11 @@
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    21.9241111111111, 70.0171111111111
+                    21.1483111, 70.0819611
                 ]
             },
             "properties": {
-                "name": "UDSAM",
+                "name": "SUSIN",
                 "icao": "EFRO"
             }
         },
